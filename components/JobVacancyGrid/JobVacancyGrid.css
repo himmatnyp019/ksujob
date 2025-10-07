@@ -22,7 +22,7 @@
 }
 
 .main-heading {
-  font-size: 2.5rem;
+  font-size: clamp(16px, 4vw, 2.4rem);
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 1rem;
@@ -37,7 +37,7 @@
   height: 25px;
   width: 55%;
   border-radius: 3px;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   opacity: 0.5;
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);

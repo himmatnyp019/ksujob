@@ -269,7 +269,7 @@ const JobVacancyGrid = () => {
   const visibleJobs = filteredJobs.slice(0, visibleCount);
 
   return (
-    <div className="job-vacancy-container">
+    <div className="job-vacancy-container" id='job'>
       <div className="job-vacancy-wrapper">
         <div className="header-section">
           <h1 className="main-heading">Employment Recommendation Job Posting</h1>

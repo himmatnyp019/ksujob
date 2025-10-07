@@ -7,11 +7,11 @@ const Home = () => {
     return (
         <div>
             <div className="div-that-rotate">
-
             </div>
             <HeroSection />
             <JobVacancyGrid />
             <Whyksu/>
+            
         </div>
     )
 }
