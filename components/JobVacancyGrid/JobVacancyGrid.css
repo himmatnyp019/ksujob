@@ -28,6 +28,21 @@
   margin-bottom: 1rem;
   width: 100%;
   text-align: left;
+  position: relative;
+}
+
+.main-heading::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 55%;
+  border-radius: 3px;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  z-index: 1;
+
 }
 
 .job-count {

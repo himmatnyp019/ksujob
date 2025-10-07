@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const StoreContext = React.createContext({
   query: '',
   isSearch: false,
-  setIsSearch: () => {}
+  setIsSearch: () => { }
 });
 
 const jobPostings = [
@@ -157,7 +157,7 @@ const jobPostings = [
   }
 ];
 
-const JobCard = ({job }) => {
+const JobCard = ({ job }) => {
   const truncate = (str, maxLength) => {
     if (str.length <= maxLength) return str;
     return str.slice(0, maxLength) + '...';
@@ -166,12 +166,12 @@ const JobCard = ({job }) => {
   return (
     <div className="job-card">
       <div className="job-card-gradient"></div>
-      
+
       <div className="job-card-content">
         <div className="job-card-header">
           <div className="company-logo-wrapper">
-            <img 
-              src={job.companyLogoUrl} 
+            <img
+              src={job.companyLogoUrl}
               alt={job.companyName}
               className="company-logo"
             />
@@ -226,7 +226,7 @@ const JobCard = ({job }) => {
           </div>
         </div>
 
-        <Link to={`/detail/?key=${job.jobId}`} onClick={()=> window.scrollTo(0, 0)} className="apply-button">
+        <Link to={`/detail/?key=${job.jobId}`} onClick={() => window.scrollTo(0, 0)} className="apply-button">
           View Details & Apply
         </Link>
       </div>
@@ -241,6 +241,8 @@ const JobCard = ({job }) => {
 const JobVacancyGrid = () => {
   const { query, isSearch, setIsSearch } = useContext(StoreContext);
   const [filteredJobs, setFilteredJobs] = useState(jobPostings);
+  const [visibleCount, setVisibleCount] = useState(6); // show 6 initially
+
 
   useEffect(() => {
     if (isSearch && query) {
@@ -256,20 +258,52 @@ const JobVacancyGrid = () => {
       setFilteredJobs(jobPostings);
     }
   }, [isSearch, query, setIsSearch]);
+  const handleShowMore = () => {
+    if (visibleCount >= filteredJobs.length) {
+      setVisibleCount(6);
+    } else {
+      // Otherwise, show 6 more
+      setVisibleCount((prev) => prev + 6);
+    }
+  };
+  const visibleJobs = filteredJobs.slice(0, visibleCount);
 
   return (
     <div className="job-vacancy-container">
       <div className="job-vacancy-wrapper">
         <div className="header-section">
           <h1 className="main-heading">Employment Recommendation Job Posting</h1>
-         
         </div>
 
         <div className="jobs-grid">
-          {filteredJobs.map((job) => (
+          {visibleJobs.map((job) => (
             <JobCard key={job.jobId} job={job} />
           ))}
         </div>
+
+        {/* Show the button only if there are more jobs to display */}
+        {filteredJobs.length > 6 &&(
+          <div className="show-more-container" style={{ textAlign: "center", marginTop: "20px" }}>
+            <button
+              className="show-more-btn"
+              onClick={handleShowMore}
+              style={{
+                padding: "10px 25px",
+                outline:"none",
+                borderRadius: "8px",
+                border: "none",
+                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                color: "#fff",
+                cursor: "pointer",
+                transition: "0.3s",
+              }}
+              onMouseEnter={(e) => (e.target.style.opacity = "0.8")}
+              onMouseLeave={(e) => (e.target.style.opacity = "1")} >
+
+              {visibleCount < filteredJobs.length ? "See More" : "Show less"}
+            </button>
+          </div>
+       ) }
 
         {filteredJobs.length === 0 && (
           <div className="no-results">

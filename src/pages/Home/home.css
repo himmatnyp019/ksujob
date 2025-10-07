@@ -1,0 +1,7 @@
+.div-that-rotate{
+    height: 50px;
+    width: 110vw;
+    background-color: #FEFEFE;
+    transform: rotate(10deg);
+    z-index: 3;
+}
