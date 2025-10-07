@@ -122,6 +122,105 @@ const jobPostings = [
       visaSupport: true,
       visaType: "E-7 (Foreign National of Special Ability)"
     }
+  },
+   {
+    jobId: "20251006-DES-002",
+    postingTitle: "[The Yarsha] Seeking Cloud Backend Developer (3+ years experience)",
+    datePosted: "2025-10-06",
+    applicationDeadline: "2025-11-05",
+    companyInfo: {
+      companyName: "The Yarsha Inc.",
+      companyLogoUrl: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=200&h=200&fit=crop",
+      industry: "IT, Information and Communications",
+      companySize: "SME (50-100 employees)",
+      companyWebsite: "https://www.the-yarsha.example.com",
+      companyDescription: "The Yarsha is an innovative tech company that maximizes business efficiency by providing AI-based cloud solutions."
+    },
+    jobDetails: {
+      jobTitle: "Cloud Backend Developer",
+      department: "R&D Center",
+      numberOfHires: 2,
+      employmentType: "Permanent / Full-time"
+    },
+    qualifications: {
+      experienceLevel: "Experienced (3 to 5 years)",
+      educationLevel: "Bachelor's degree (4-year) or higher",
+      requiredSkills: [
+        "Java",
+        "Spring Boot",
+        "AWS or GCP",
+        "Docker",
+        "Kubernetes",
+        "MySQL/PostgreSQL",
+        "Git"
+      ],
+      preferredSkills: [
+        "Kotlin",
+        "CI/CD pipeline experience",
+        "Microservices Architecture (MSA)",
+        "Kafka or RabbitMQ"
+      ],
+      languageRequirements: [
+        {
+          language: "Korean",
+          level: "Business proficiency"
+        },
+        {
+          language: "English",
+          level: "Basic communication (reading/writing technical documents)"
+        }
+      ]
+    },
+    workConditions: {
+      salary: {
+        type: "Annual",
+        currency: "KRW",
+        range: "55,000,000 - 75,000,000",
+        negotiable: true,
+        details: "Decided after interview, based on experience."
+      },
+      workHours: "5 days a week, 09:30 - 18:30 (Includes 1-hour break)",
+      location: {
+        region: "Busan Metropolitan City",
+        city: "Haeundae-gu",
+        fullAddress: "15F, Centum Green Tower, 78, Centum jungang-ro, Haeundae-gu, Busan"
+      }
+    },
+    benefits: [
+      "National 4 Major Insurances",
+      "Severance pay",
+      "Flexible use of annual leave",
+      "Lunch expenses provided",
+      "Self-development fund support",
+      "Holiday bonuses",
+      "Stock option opportunities",
+      "Latest development equipment provided"
+    ],
+    applicationProcess: {
+      howToApply: "Online application via company website",
+      requiredDocuments: [
+        "Resume",
+        "Career portfolio",
+        "Project portfolio (optional)"
+      ],
+      recruitmentSteps: [
+        "Document Screening",
+        "Online Coding Test",
+        "1st Technical Interview",
+        "2nd Executive Interview",
+        "Final Offer"
+      ],
+      contactPerson: {
+        name: "Min-jun Kim",
+        department: "HR Team",
+        email: "hr@the-yarsha.example.com",
+        phone: "051-123-4567"
+      }
+    },
+    forForeignApplicants: {
+      visaSupport: true,
+      visaType: "E-7 (Foreign National of Special Ability)"
+    }
   }
   // Add more jobs as needed...
 ];

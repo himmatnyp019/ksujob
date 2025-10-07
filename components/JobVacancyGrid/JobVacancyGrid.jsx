@@ -36,7 +36,7 @@ const jobPostings = [
     preferredSkills: "Figma, Adobe XD, Prototyping, User Research, Design Systems"
   },
   {
-    jobId: "20251006-MKT-003",
+    jobId: "20251006-DES-002",
     postingTitle: "[GlobalReach] Digital Marketing Manager - E-commerce Focus",
     companyName: "GlobalReach Marketing",
     companyLogoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop",
@@ -48,7 +48,7 @@ const jobPostings = [
     preferredSkills: "SEO/SEM, Google Analytics, Social Media, Content Strategy, A/B Testing"
   },
   {
-    jobId: "20251006-ENG-004",
+    jobId: "20251006-DES-002",
     postingTitle: "[TechBridge Solutions] IoT Solutions Architect",
     companyName: "TechBridge Solutions",
     companyLogoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop",
@@ -60,7 +60,7 @@ const jobPostings = [
     preferredSkills: "MQTT, Azure IoT, Edge Computing, Security Protocols, Python"
   },
   {
-    jobId: "20251006-DATA-005",
+    jobId: "20251006-DES-002",
     postingTitle: "[DataVision Analytics] Senior Data Scientist - AI/ML",
     companyName: "DataVision Analytics",
     companyLogoUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=100&h=100&fit=crop",
@@ -72,7 +72,7 @@ const jobPostings = [
     preferredSkills: "TensorFlow, PyTorch, NLP, Computer Vision, MLOps, Statistical Analysis"
   },
   {
-    jobId: "20251006-PM-006",
+    jobId: "20251006-DES-002",
     postingTitle: "[NextGen Products] Product Manager - Fintech Platform",
     companyName: "NextGen Products Co.",
     companyLogoUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&h=100&fit=crop",
@@ -84,7 +84,7 @@ const jobPostings = [
     preferredSkills: "Agile/Scrum, Product Roadmap, Market Analysis, Stakeholder Management"
   },
   {
-    jobId: "20251006-FE-007",
+    jobId: "20251006-DES-002",
     postingTitle: "[WebWave] Frontend Developer - React Specialist",
     companyName: "WebWave Technologies",
     companyLogoUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=100&h=100&fit=crop",
@@ -96,7 +96,7 @@ const jobPostings = [
     preferredSkills: "React, TypeScript, Next.js, Tailwind CSS, Redux, Jest, Webpack"
   },
   {
-    jobId: "20251006-QA-008",
+    jobId: "20251006-DES-002",
     postingTitle: "[QualityFirst] Senior QA Automation Engineer",
     companyName: "QualityFirst Inc.",
     companyLogoUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop",
@@ -108,7 +108,7 @@ const jobPostings = [
     preferredSkills: "Selenium, Cypress, JUnit, Test Strategy, API Testing, Performance Testing"
   },
   {
-    jobId: "20251006-SEC-009",
+    jobId: "20251006-DES-002",
     postingTitle: "[SecureNet] Cybersecurity Specialist - Penetration Testing",
     companyName: "SecureNet Security",
     companyLogoUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=100&h=100&fit=crop",

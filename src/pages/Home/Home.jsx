@@ -12,7 +12,7 @@ const Home = () => {
             <JobVacancyGrid />
             <Whyksu/>
             
-        </div>
+    </div>
     )
 }
 
