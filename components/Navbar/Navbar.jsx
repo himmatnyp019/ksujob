@@ -169,9 +169,8 @@ const Navbar = () => {
         <div className={`mobile-sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="sidebar-logo">
-              <div className="logo-icon">
-                <div className="logo-circle"></div>
-                <div className="logo-inner"></div>
+              <div className="sidebar-close" onClick={()=> setIsMobileMenuOpen(false)}>
+               <X size={20}/>
               </div>
               <span className="logo-text">KSU JOB</span>
             </div>

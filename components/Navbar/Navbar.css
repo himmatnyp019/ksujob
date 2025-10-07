@@ -95,7 +95,9 @@
   align-items: center;
   justify-content: center;
 }
-
+.sidebar-close{
+  padding: 10px;
+}
 .logo-circle {
   position: absolute;
   width: 100%;
