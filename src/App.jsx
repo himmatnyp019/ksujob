@@ -6,6 +6,7 @@ import JobDetail from "../components/JobDetail/JobDetail"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile/Profile.jsx";
 import Footer from "../components/Footer/Footer.jsx";
+import Login from "./pages/Login/Login.jsx";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/detail" element={<JobDetail />} />
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/login" element={<Login/>} ></Route>
       </Routes>
 
       <Footer />

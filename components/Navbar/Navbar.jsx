@@ -4,7 +4,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import {assets} from '../../src/assets/assets';
+import { assets } from '../../src/assets/assets';
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [token, setToken] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,21 +25,21 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { 
-      id: 1, 
-      name: 'Recruitment & Talent Search', 
+    {
+      id: 1,
+      name: 'Recruitment & Talent Search',
       hasDropdown: true,
       submenu: ['Job Postings', 'Talent Pool', 'Headhunting']
     },
-    { 
-      id: 2, 
-      name: 'Support Services', 
+    {
+      id: 2,
+      name: 'Support Services',
       hasDropdown: true,
       submenu: ['Consulting', 'Training', 'HR Solutions']
     },
-    { 
-      id: 3, 
-      name: 'Community', 
+    {
+      id: 3,
+      name: 'Community',
       hasDropdown: true,
       submenu: ['Forum', 'Events', 'News']
     },
@@ -60,10 +62,12 @@ const Navbar = () => {
   };
 
   const handleLogin = () => {
-    toast.info('Redirecting to login...', {
-      position: "top-right",
-      autoClose: 2000,
-    });
+    // toast.info('Redirecting to login...', {
+    //   position: "top-right",
+    //   autoClose: 2000,
+    // });
+    navigate("/login")
+
   };
 
   const handleJoin = () => {
@@ -93,8 +97,8 @@ const Navbar = () => {
 
           <ul className="navbar-menu desktop-menu">
             {navItems.map((item) => (
-              <li 
-                key={item.id} 
+              <li
+                key={item.id}
                 className="nav-item"
                 onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.id)}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -116,7 +120,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-         
+
 
           <div className="navbar-actions">
 
@@ -156,8 +160,8 @@ const Navbar = () => {
               onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)}
               autoFocus
             />
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="close-search"
               onClick={() => setIsSearchOpen(false)}
             >
@@ -169,8 +173,8 @@ const Navbar = () => {
         <div className={`mobile-sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="sidebar-logo">
-              <div className="sidebar-close" onClick={()=> setIsMobileMenuOpen(false)}>
-               <X size={20}/>
+              <div className="sidebar-close" onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={20} />
               </div>
               <span className="logo-text">KSU JOB</span>
             </div>
@@ -178,14 +182,14 @@ const Navbar = () => {
           <ul className="sidebar-menu">
             {navItems.map((item) => (
               <li key={item.id} className="sidebar-item">
-                <div 
+                <div
                   className="sidebar-link"
                   onClick={() => item.hasDropdown && toggleDropdown(item.id)}
                 >
                   {item.name}
                   {item.hasDropdown && (
-                    <ChevronDown 
-                      size={18} 
+                    <ChevronDown
+                      size={18}
                       className={`sidebar-dropdown-icon ${activeDropdown === item.id ? 'rotated' : ''}`}
                     />
                   )}
