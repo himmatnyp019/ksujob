@@ -6,6 +6,10 @@ import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { assets } from '../../src/assets/assets';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../context/AuthContent';
+import { signOut } from "firebase/auth";
+import { auth } from "../../src/firebase.js";
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,6 +19,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [token, setToken] = useState(null);
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +28,9 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
 
   const navItems = [
     {
@@ -90,10 +98,10 @@ const Navbar = () => {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-background-animation"></div>
         <div className="navbar-container">
-          <div className="navbar-logo">
+          <Link to="/" className="navbar-logo">
             <img src={assets.logoimage} alt="" />
             {/* <span className="logo-text">Job Board For International Students</span> */}
-          </div>
+          </Link>
 
           <ul className="navbar-menu desktop-menu">
             {navItems.map((item) => (
@@ -124,23 +132,24 @@ const Navbar = () => {
 
           <div className="navbar-actions">
 
-            {!token ? (
+            {!currentUser ? (
               <>
                 <button className="btn btn-login" onClick={handleLogin}>
                   <User size={18} />
                   <span>Login</span>
                 </button>
                 {/* // onClick={handleJoin} */}
-                <Link to="/profile" className="btn btn-join">
-                  <UserPlus size={18} />
-                  <span>Profile</span>
-                </Link>
+               
               </>
             ) : (
               <div className="user-profile">
-                <div className="avatar">U</div>
+                <div className="btn btn-login" onClick={handleLogout}>Log Out</div>
               </div>
             )}
+             <Link to="/profile" className="btn btn-join">
+                  <UserPlus size={18} />
+                  <span>Profile</span>
+                </Link>
 
             <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
